@@ -1,19 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Note Card Stack</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <div class="flex flex-col gap-10 items-center">
-        <input class="inp px-5 py-5 rounded outline-none bg-[#111] text-[#888]" type="text" placeholder="Search...">
-        <div class=" cards flex gap-10"></div>
+
+  <!-- FORM -->
+  <div class="form-container" id="formBox">
+    <h2>New Call</h2>
+
+    <form id="noteForm">
+      <div>
+        <label>Image URL</label>
+        <input required type="text" placeholder="https://example.com/photo.jpg" required>
+      </div>
+
+      <div>
+        <label>Full Name</label>
+        <input required type="text" placeholder="Enter full name" required>
+      </div>
+
+      <div>
+        <label>Home Town</label>
+        <input required type="text" placeholder="Enter home town" required>
+      </div>
+
+      <div>
+        <label>Purpose</label>
+        <input required type="text" placeholder="Enter purpose" required>
+      </div>
+
+      <div class="category">
+        <label>Category</label>
+
+        <label class="radio">
+          <input required type="radio" name="category" value="Emergency" required>
+          Emergency
+        </label>
+
+        <label class="radio">
+          <input required type="radio" name="category" value="Important">
+          Important
+        </label>
+
+        <label class="radio">
+          <input required type="radio" name="category" value="Urgent">
+          Urgent
+        </label>
+
+        <label class="radio">
+          <input required type="radio" name="category" value="No Rush">
+          No Rush
+        </label>
+      </div>
+
+      <button class="submit-btn">Create Note</button>
+    </form>
+
+    <button class="closeForm" id="closeForm">Close</button>
+  </div>
+
+  <!-- MAIN UI -->
+  <div class="note-container">
+
+    <!-- LEFT ICONS -->
+    <div class="left-icons">
+      <button id="add-note"><i class="ri-add-line"></i></button>
+      <button id="upBtn"><i class="ri-arrow-up-line"></i></button>
+      <button id="downBtn"><i class="ri-arrow-down-line"></i></button>
     </div>
-    <script src="script.js"></script>
+
+    <!-- STACK -->
+    <div class="stack" id="stack">
+
+      <!-- CARD 1 -->
+      <div class="card">
+        <img src="https://i.pravatar.cc/100" class="avatar">
+        <h2>Fatima Uma</h2>
+        <div class="info"><span>Home town</span><span>Singapore</span></div>
+        <div class="info"><span>Bookings</span><span>3 times</span></div>
+
+        <div class="buttons">
+          <button class="call">Call</button>
+          <button class="msg">Message</button>
+        </div>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="card">
+        <img src="https://i.pravatar.cc/101" class="avatar">
+        <h2>John Alex</h2>
+        <div class="info"><span>Home town</span><span>London</span></div>
+        <div class="info"><span>Bookings</span><span>5 times</span></div>
+
+        <div class="buttons">
+          <button class="call">Call</button>
+          <button class="msg">Message</button>
+        </div>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="card">
+        <img src="https://i.pravatar.cc/102" class="avatar">
+        <h2>Sarah Lee</h2>
+        <div class="info"><span>Home town</span><span>Tokyo</span></div>
+        <div class="info"><span>Bookings</span><span>2 times</span></div>
+
+        <div class="buttons">
+          <button class="call">Call</button>
+          <button class="msg">Message</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT COLORS -->
+    <div class="right-colors">
+      <span class="dot black"></span>
+      <span class="dot purple"></span>
+      <span class="dot orange"></span>
+      <span class="dot teal"></span>
+    </div>
+
+  </div>
+
+  <!-- JS -->
+  <script>
+    const formBox = document.getElementById("formBox");
+    const addBtn = document.getElementById("add-note");
+    const closeBtn = document.getElementById("closeForm");
+
+    addBtn.onclick = () => {
+      formBox.style.display = "block";
+    };
+
+    closeBtn.onclick = () => {
+      formBox.style.display = "none";
+    };
+  </script>
+
+
+
 </body>
+
 </html>
-
-
