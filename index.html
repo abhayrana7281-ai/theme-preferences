@@ -2,19 +2,35 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Theme Toggle</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Simulation</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="light">
+<body>
+
     <div class="container">
-        <h1>Theme Preferences</h1>
-        <button id="toggleTheme">Toggle Theme</button>
+
+        <div class="glass-card">
+
+            <h2>Download File</h2>
+
+            <div class="progress-box">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+
+            <p class="percent" id="percent">0%</p>
+
+            <button id="downloadBtn">Start Download</button>
+
+        </div>
+
     </div>
 
     <script src="script.js"></script>
+    <script src=""></script>
+
 </body>
 
 </html>
